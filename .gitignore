@@ -1,0 +1,18 @@
+# Vagrant
+.vagrant/
+*.log
+*.err
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+*.tmp
