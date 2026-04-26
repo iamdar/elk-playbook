@@ -35,23 +35,27 @@ cd elk-playbook
 ```
 
 ### Step 2: Understand the Vagrantfile
-The `Vagrantfile` defines the virtual machine:
-*   **Box**: Ubuntu 22.04 (LTS).
-*   **Resources**: 4GB RAM and 2 CPUs.
-*   **Network**: A private IP `192.168.56.10` so you can access Kibana from your host browser.
-*   **Provisioning**: Automates the installation of OpenJDK and the Elastic Stack.
+The `Vagrantfile` defines two virtual machines:
+1.  **`elk-node` (192.168.56.10)**:
+    *   **Resources**: 4GB RAM, 2 CPUs.
+    *   **Provisioning**: Installs Elasticsearch, Logstash, and Kibana.
+2.  **`php-app` (192.168.56.20)**:
+    *   **Resources**: 1GB RAM, 1 CPU.
+    *   **Provisioning**: Installs Nginx and PHP-FPM with a sample JSON API.
 
-### Step 3: Start the VM
-Run the following command to create and provision the VM:
+### Step 3: Start the VMs
+Run the following command to create and provision both nodes:
 ```bash
 vagrant up
 ```
-*Note: This may take several minutes depending on your internet speed.*
+*Note: This may take several minutes as it downloads the OS image and installs all components.*
 
-### Step 4: Access the VM
-Once the VM is running, log in via SSH:
+### Step 4: Access the VMs
+You can SSH into either node by specifying its name:
 ```bash
-vagrant ssh
+vagrant ssh elk-node
+# OR
+vagrant ssh php-app
 ```
 
 ---
