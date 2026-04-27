@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "4096"
       vb.cpus = 2
       vb.name = "elk-stack-lab"
+      vb.gui = true
     end
 
     elk.vm.provision "shell", inline: <<-SHELL
