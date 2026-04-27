@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "1024"
       vb.cpus = 1
       vb.name = "php-app-node"
+      vb.gui = true
     end
 
     php.vm.provision "shell", inline: <<-SHELL
